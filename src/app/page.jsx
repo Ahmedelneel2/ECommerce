@@ -1,4 +1,3 @@
-"use client"
 import { Button } from '@/components/ui/button';
 import getAllProducts from '../apis/getAllProducts'
 import {
@@ -17,15 +16,8 @@ import CategorySlide from './_components/CategorySlide/CategorySlide';
 import getCategories from '@/apis/getCategories';
 import Image from 'next/image';
 import { useContext } from 'react';
-import { AppProvider } from '@/store/context';
-
-
 const Home = async () => {
-  const state = useContext(AppProvider)
-  console.log("text",state)
-
    const products = await getAllProducts()
-  
   return <>
     <Mainswiper/>
     <CategorySlide/>

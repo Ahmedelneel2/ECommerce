@@ -6,13 +6,10 @@ import "./../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 import "./../../node_modules/@fortawesome/fontawesome-free/js/all.js";
 import { Toaster } from "sonner";
 import App from "next/app";
-import { AppProvider } from "@/store/context";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  subsets:["latin"],
 });
-
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -33,11 +30,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AppProvider>
-          <Navbar />
-          <Toaster />
-          {children}
-        </AppProvider>
+        <Navbar />
+        <Toaster />
+        {children}
       </body>
     </html>
   );
